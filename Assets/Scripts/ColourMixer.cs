@@ -7,11 +7,11 @@ public class ColourMixer : MonoBehaviour
 {
     public List<string> CurrentColours = new List<string>();
     public List<MixedColour> MixedColours = new List<MixedColour>();
-    public Color Colour;
-    public bool HasMixed;
-    private bool mixed;
     private Cube MainCube;
     private Image SliderFill;
+
+    [HideInInspector]
+    public Dictionary<string, int> PreMixer = new Dictionary<string, int>();
 
     public class MixedColour
     {
@@ -42,7 +42,7 @@ public class ColourMixer : MonoBehaviour
         /// <returns>True if the colours can be mixed. False otherwise.</returns>
         public bool CanMake(List<string> colours)
         {
-            if (colours.Contains(FirstColour) && colours.Contains(SecondColour)) 
+            if (colours.Contains(FirstColour) && colours.Contains(SecondColour))
             {
                 if (string.IsNullOrEmpty(ThirdColour))
                 {
@@ -63,13 +63,17 @@ public class ColourMixer : MonoBehaviour
         // Declare all of the possible mixable colours here.
         MainCube = GameObject.Find("MainCube").GetComponent<Cube>();
         SliderFill = GameObject.Find("Fill").GetComponent<Image>();
-         
-        MixedColour green = new MixedColour("yellow", "blue", string.Empty,"green");
+
+        MixedColour green = new MixedColour("yellow", "blue", string.Empty, "green");
         MixedColour orange = new MixedColour("red", "yellow", string.Empty, "orange");
         MixedColour purple = new MixedColour("blue", "red", string.Empty, "purple");
         MixedColour teal = new MixedColour("blue", "green", string.Empty, "teal");
         MixedColour magenta = new MixedColour("purple", "red", string.Empty, "magenta");
         MixedColour vermilion = new MixedColour("red", "orange", string.Empty, "vermilion");
+        MixedColour chartreuse = new MixedColour("yellow", "green", string.Empty, "chartreuse");
+        MixedColour amber = new MixedColour("yellow", "orange", string.Empty, "amber");
+        MixedColour violet = new MixedColour("purple", "blue", string.Empty, "violet");
+
 
         MixedColours.Add(green);
         MixedColours.Add(orange);
@@ -77,21 +81,19 @@ public class ColourMixer : MonoBehaviour
         MixedColours.Add(teal);
         MixedColours.Add(magenta);
         MixedColours.Add(vermilion);
-        SliderFill.color = MainCube.CubeColour;
+        MixedColours.Add(chartreuse);
+        MixedColours.Add(amber);
+        MixedColours.Add(violet);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!mixed)
+        MixedColour colourToMake = CanMixColours();
+        if (colourToMake != null)
         {
-            MixedColour colourToMake = CanMixColours();
-            if (colourToMake != null)
-            {
-                Colour = MixColours(colourToMake);
-            }
+            MainCube.UpdateColour(MixColours(colourToMake));
         }
-        SliderFill.color = MainCube.CubeColour;
     }
 
     /// <summary>
@@ -120,9 +122,7 @@ public class ColourMixer : MonoBehaviour
     /// <returns>The created colour.</returns>
     public Color MixColours(MixedColour colourToMake)
     {
-        Color newColour;
-        HasMixed = true;
-        mixed = true;
+        Color32 newColour;
         switch (colourToMake.MyColour.ToLower())
         {
             case "green":
@@ -149,11 +149,35 @@ public class ColourMixer : MonoBehaviour
                 newColour = new Color32(217, 96, 59, 255);
                 break;
 
+            case "chartreuse":
+                newColour = new Color32(127, 255, 0, 255);
+                break;
+
+            case "amber":
+                newColour = new Color32(255, 191, 0, 255);
+                break;
+
+            case "violet":
+                newColour = new Color32(159, 0, 255, 255);
+                break;
+
             default:
                 newColour = Color.white;
-                HasMixed = false;
                 break;
         }
+        UpdateSliderColour(newColour);
+        CurrentColours.Clear();
+        CurrentColours.Add(colourToMake.MyColour.ToLower());
+        Debug.Log("New colour =" + newColour);
         return newColour;
+    }
+
+    /// <summary>
+    /// Updates the colour of the slider in the UI.
+    /// </summary>
+    /// <param name="colour">Colour to change the slider to.</param>
+    public void UpdateSliderColour(Color32 colour)
+    {
+        SliderFill.color = colour;
     }
 }

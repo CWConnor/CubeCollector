@@ -219,7 +219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 0
 --- !u!23 &513948400
 MeshRenderer:
@@ -353,7 +355,7 @@ Transform:
   m_GameObject: {fileID: 516124121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0.5, z: 2.5}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -370,7 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 0}
-  CubeColour: {r: 0, g: 0, b: 0, a: 0}
+  MixerSlider: {fileID: 0}
   TotalMoves: 9
 --- !u!114 &516124127
 MonoBehaviour:
@@ -528,7 +530,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 3
 --- !u!23 &751972603
 MeshRenderer:
@@ -840,7 +844,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentColours: []
   Colour: {r: 0, g: 0, b: 0, a: 0}
-  HasMixed: 0
 --- !u!114 &843067605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,7 +940,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 3
 --- !u!23 &1012028495
 MeshRenderer:
@@ -1132,7 +1137,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 0, g: 0, b: 0, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 2
 --- !u!23 &1250972111
 MeshRenderer:
@@ -1225,7 +1232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 0
 --- !u!23 &1255068450
 MeshRenderer:
@@ -1410,7 +1419,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 0.9705882, g: 0.9705882, b: 0.9705882, a: 1}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 3
 --- !u!23 &1515860896
 MeshRenderer:
@@ -1518,7 +1529,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 1
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 1
 --- !u!23 &1530521521
 MeshRenderer:
@@ -1694,7 +1707,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 0.93610555, g: 1, b: 0.33823532, a: 1}
   ColourName: 
-  ColourValue: 1
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 1
 --- !u!23 &1842821175
 MeshRenderer:
@@ -1864,7 +1879,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 0, g: 1, b: 0, a: 1}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 3
 --- !u!23 &1964881410
 MeshRenderer:

@@ -85,68 +85,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &48746458
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 48746460}
-  - 108: {fileID: 48746459}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &48746459
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 48746458}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_BounceIntensity: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_AreaSize: {x: 1, y: 1}
---- !u!4 &48746460
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 48746458}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -8.88, y: 9.85, z: -0.08}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 89.980194, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1 &132734254
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 3
 --- !u!23 &513948400
 MeshRenderer:
@@ -293,7 +233,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 03d1a0bc51c827a4c8e3670fcadac986, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -340,7 +280,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1 &516124121
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,11 +355,11 @@ Transform:
   m_GameObject: {fileID: 516124121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0.5, z: 2.5}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &516124126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 0}
-  CubeColour: {r: 0, g: 0, b: 0, a: 0}
+  MixerSlider: {fileID: 0}
   TotalMoves: 9
 --- !u!114 &516124127
 MonoBehaviour:
@@ -477,7 +417,6 @@ GameObject:
   - 33: {fileID: 714364012}
   - 64: {fileID: 714364011}
   - 23: {fileID: 714364010}
-  - 114: {fileID: 714364014}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -495,7 +434,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e6c536593aa022b4bacd1769d2dcb752, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -542,22 +481,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
---- !u!114 &714364014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 714364009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2956188f6f9bf44195a44f2d44d2356, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Colour: {r: 0.375, g: 0.328125, b: 0.328125, a: 0.641}
-  ColourName: 
-  ColourValue: 0
-  GridCubeType: 0
+  m_RootOrder: 4
 --- !u!1 &751972600
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +530,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 3
 --- !u!23 &751972603
 MeshRenderer:
@@ -618,7 +544,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 03d1a0bc51c827a4c8e3670fcadac986, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -665,7 +591,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!1 &767898100
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +844,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentColours: []
   Colour: {r: 0, g: 0, b: 0, a: 0}
-  HasMixed: 0
 --- !u!114 &843067605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,7 +940,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 3
 --- !u!23 &1012028495
 MeshRenderer:
@@ -1027,7 +954,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 03d1a0bc51c827a4c8e3670fcadac986, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1074,7 +1001,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &1130555646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,7 +1085,7 @@ Transform:
   m_LocalRotation: {x: 0.42173636, y: -0.5675725, z: 0.42173642, w: 0.5675724}
   m_LocalPosition: {x: 4, y: 18.8, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 73.2286, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1210,7 +1137,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 0, g: 0, b: 0, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 0
 --- !u!23 &1250972111
 MeshRenderer:
@@ -1222,7 +1151,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 68e1de5923adc7447a5c27e505c77c54, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1269,7 +1198,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1 &1255068448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 3
 --- !u!23 &1255068450
 MeshRenderer:
@@ -1315,7 +1246,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 03d1a0bc51c827a4c8e3670fcadac986, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1362,7 +1293,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!54 &1255068454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1486,9 +1417,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2956188f6f9bf44195a44f2d44d2356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Colour: {r: 0.042820066, g: 0.13259448, b: 0.72794116, a: 1}
-  ColourName: blue
-  ColourValue: 0
+  Colour: {r: 0.9705882, g: 0.9705882, b: 0.9705882, a: 1}
+  ColourName: 
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 1
 --- !u!23 &1515860896
 MeshRenderer:
@@ -1500,7 +1433,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 69562e83fd34c8e4db78f773d83c637b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1547,7 +1480,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &1530521518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,7 +1529,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 1, g: 1, b: 1, a: 0}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 3
 --- !u!23 &1530521521
 MeshRenderer:
@@ -1608,7 +1543,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 03d1a0bc51c827a4c8e3670fcadac986, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1655,7 +1590,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1 &1708774001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,8 +1706,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Colour: {r: 0.93610555, g: 1, b: 0.33823532, a: 1}
-  ColourName: yellow
-  ColourValue: 0
+  ColourName: 
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 1
 --- !u!23 &1842821175
 MeshRenderer:
@@ -1784,7 +1721,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4af5b8a26eaa8dd4f8bcefdbcc3d771e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1831,7 +1768,69 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
+--- !u!1 &1893146271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1893146273}
+  - 108: {fileID: 1893146272}
+  m_Layer: 0
+  m_Name: Directional light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1893146272
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1893146271}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &1893146273
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1893146271}
+  m_LocalRotation: {x: 0.4638533, y: -0.050581213, z: -0.041655473, w: 0.88348544}
+  m_LocalPosition: {x: -1.43, y: 5.81, z: -2.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
 --- !u!1 &1964881407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1879,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Colour: {r: 0, g: 1, b: 0, a: 1}
   ColourName: 
-  ColourValue: 0
+  ColourTaken: 0
+  MoreToMix: 0
+  AmountToMix: 0
   GridCubeType: 2
 --- !u!23 &1964881410
 MeshRenderer:
@@ -1892,7 +1893,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d1b64b70c3d39d74ea55e721c705271a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1939,4 +1940,4 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
