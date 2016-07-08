@@ -9,8 +9,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Cube Colour Cross
+  companyName: ConnorWare
+  productName: Cube Collector
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -89,7 +89,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.ConnorWare.CubeColourCross
+  bundleIdentifier: com.ConnorWare.CubeCollector
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
